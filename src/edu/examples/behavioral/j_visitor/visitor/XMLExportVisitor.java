@@ -3,6 +3,7 @@ package edu.examples.behavioral.j_visitor.visitor;
 import edu.examples.behavioral.j_visitor.shapes.*;
 
 public class XMLExportVisitor implements Visitor {
+
     public String export(Shape... args) {
         StringBuilder sb = new StringBuilder();
         sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>" + "\n");
@@ -12,6 +13,7 @@ public class XMLExportVisitor implements Visitor {
         return sb.toString();
     }
 
+    @Override
     public String visitDot(Dot d) {
         return "<dot>" + "\n" +
                 "    <id>" + d.getId() + "</id>" + "\n" +
@@ -20,6 +22,7 @@ public class XMLExportVisitor implements Visitor {
                 "</dot>";
     }
 
+    @Override
     public String visitCircle(Circle c) {
         return "<circle>" + "\n" +
                 "    <id>" + c.getId() + "</id>" + "\n" +
@@ -29,6 +32,7 @@ public class XMLExportVisitor implements Visitor {
                 "</circle>";
     }
 
+    @Override
     public String visitRectangle(Rectangle r) {
         return "<rectangle>" + "\n" +
                 "    <id>" + r.getId() + "</id>" + "\n" +
@@ -39,6 +43,7 @@ public class XMLExportVisitor implements Visitor {
                 "</rectangle>";
     }
 
+    @Override
     public String visitCompoundGraphic(CompoundShape cg) {
         return "<compound_graphic>" + "\n" +
                 "   <id>" + cg.getId() + "</id>" + "\n" +

@@ -4,6 +4,7 @@ package edu.examples.behavioral.a_chain_of_responsibility.middleware;
  * Base middleware class.
  */
 public abstract class Middleware {
+
     private Middleware next;
 
     /**
