@@ -20,6 +20,6 @@ public abstract class Dialog {
      * Subclasses will override this method in order to create specific button
      * objects.
      */
-    public abstract Button createButton();
+    protected abstract Button createButton();
 
 }
